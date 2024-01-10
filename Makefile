@@ -1,8 +1,8 @@
 NAME = push_swap
 LIBFT = libft
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-SRC = main.c list_creation.c split.c free_list.c pushing.c testiprintti.c
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+SRC = main.c list_creation.c split.c free_list.c stack_modify.c stack_utils.c rotate_command.c reverse_rotate_command.c testiprintti.c
 
 OBJ = $(SRC:.c=.o)
 

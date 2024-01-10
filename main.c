@@ -31,12 +31,17 @@ int	main(int argc, char **argv)
 	test_print(&b);
 	pb(&a, &b);
 	pb(&a, &b);
+	pb(&a, &b);
 	test_print(&a); //Testing purposes to print current list.
 	test_print(&b);
+	rrr(&a, &b);
+	rrr(&a, &b);
+	test_print(&a);
+	test_print(&b);
+	pa(&a, &b);
 	pa(&a, &b);
 	pa(&a, &b);
 	test_print(&a);
-	test_print(&b);
 	free_list(&a);
 	if (argc == 2)
 		free_split(original_argv);
