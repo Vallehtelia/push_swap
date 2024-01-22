@@ -1,12 +1,10 @@
 
 #include "push_swap.h"
 
-
 int	main(int argc, char **argv)
 {
 	t_stack_node	*a;
 	t_stack_node	*b;
-	int				i;
 	char			**original_argv;
 
 	a = NULL;
@@ -21,29 +19,18 @@ int	main(int argc, char **argv)
 		if (!argv)
 			return (0);
 	}
-	i = 1;
-	while (argv[i])
+	create_list(&a, argv + 1);
+	if (!stack_sorted(a))
 	{
-		ft_lstadd_back(&a, ft_lstnew(argv[i]));
-		i++;
+		if (stack_len(a) == 2)
+			sa(&a);
+		else if (stack_len(a) == 3)
+			sort_three(&a);
+		else
+			sort_stacks(&a, &b);
 	}
-	test_print(&a);
-	test_print(&b);
-	pb(&a, &b);
-	pb(&a, &b);
-	pb(&a, &b);
-	test_print(&a); //Testing purposes to print current list.
-	test_print(&b);
-	rrr(&a, &b);
-	rrr(&a, &b);
-	test_print(&a);
-	test_print(&b);
-	pa(&a, &b);
-	pa(&a, &b);
-	pa(&a, &b);
-	test_print(&a);
-	free_list(&a);
 	if (argc == 2)
 		free_split(original_argv);
+	free_list(&a);
 	return (0);
 }

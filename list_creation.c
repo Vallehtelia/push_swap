@@ -12,7 +12,31 @@
 
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new)
+static long	ft_atol(const char *s)
+{
+	long	result;
+	int		neg;
+
+	result = 0;
+	neg = 1;
+	while (*s == ' ' || *s == '\t' || *s == '\n' || \
+		*s == '\r' || *s == '\f' || *s == '\v')
+		s++;
+	if (*s == '-' || *s == '+')
+	{
+		if (*s == '-')
+			neg = -1;
+		s++;
+	}
+	while (ft_isdigit(*s))
+	{
+		result = result * 10 + (*s - '0');
+		s++;
+	}
+	return (result * neg);
+}
+
+void	lstadd_back(t_stack_node **lst, t_stack_node *new)
 {
 	t_stack_node	*temp;
 
@@ -30,7 +54,7 @@ void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new)
 	}
 }
 
-t_stack_node	*ft_lstnew(void *content)
+t_stack_node	*lstnew(int content)
 {
 	t_stack_node	*new_node;
 
@@ -41,4 +65,24 @@ t_stack_node	*ft_lstnew(void *content)
 	new_node->next = NULL;
 	new_node->prev = NULL;
 	return (new_node);
+}
+
+void	create_list(t_stack_node **a, char **argv)
+{
+	long	n;
+	int		i;
+
+	i = 0;
+	while (argv[i])
+	{
+		if (error_syntax(argv[i]))
+			free_error(a);
+		n =	ft_atol(argv[i]);
+		if (n > INT_MAX || n < INT_MIN)
+			free_error(a);
+		if (error_duplicate(*a, (int)n))
+			free_error(a);
+		lstadd_back(a, lstnew((int)n));
+		i++;
+	}
 }
