@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   strlen.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:54:24 by vvaalant          #+#    #+#             */
-/*   Updated: 2024/01/24 16:02:55 by vvaalant         ###   ########.fr       */
+/*   Created: 2023/10/24 17:04:58 by vvaalant          #+#    #+#             */
+/*   Updated: 2023/10/24 17:05:01 by vvaalant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdlib.h>
 
-void	sort_three(t_stack_node **a)
+size_t	ft_strlen(const char *str)
 {
-	t_stack_node	*biggest_node;
+	size_t	len;
 
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a);
-	else if ((*a)->next == biggest_node)
-		rra(a);
-	if ((*a)->content > (*a)->next->content)
-		sa(a);
+	len = 0;
+	while (str[len])
+	{
+		len++;
+	}
+	return (len);
 }

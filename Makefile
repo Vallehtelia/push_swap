@@ -1,11 +1,11 @@
 NAME = push_swap
-LIBFT = ../libft
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g
+LIBFT = ./libft
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 SRC	= main.c list_creation.c split.c error_check.c stack_modify.c \
 	  stack_utils.c stack_utils_two.c rotate_command.c \
 	  reverse_rotate_command.c sorting.c sort_three.c init_a_to_b.c \
-	  init_b_to_a.c
+	  init_b_to_a.c swap.c
 
 OBJ = $(SRC:.c=.o)
 

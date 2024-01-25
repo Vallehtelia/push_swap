@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:54:24 by vvaalant          #+#    #+#             */
-/*   Updated: 2024/01/24 16:02:55 by vvaalant         ###   ########.fr       */
+/*   Created: 2023/10/26 11:20:38 by vvaalant          #+#    #+#             */
+/*   Updated: 2023/10/26 11:25:45 by vvaalant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdlib.h>
 
-void	sort_three(t_stack_node **a)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	t_stack_node	*biggest_node;
+	size_t			i;
+	unsigned char	*dest;
+	unsigned char	*source;
 
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a);
-	else if ((*a)->next == biggest_node)
-		rra(a);
-	if ((*a)->content > (*a)->next->content)
-		sa(a);
+	if (dst == NULL && src == NULL)
+	{
+		return (NULL);
+	}
+	i = 0;
+	dest = (unsigned char *)dst;
+	source = (unsigned char *)src;
+	while (n > i)
+	{
+		dest[i] = source[i];
+		i++;
+	}
+	return (dst);
 }

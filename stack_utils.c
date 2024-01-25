@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/24 15:56:34 by vvaalant          #+#    #+#             */
+/*   Updated: 2024/01/24 15:56:40 by vvaalant         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
@@ -10,7 +21,6 @@ int	stack_len(t_stack_node *stack)
 	count = 0;
 	while (stack)
 	{
-		// ft_printf("debugging2");
 		stack = stack->next;
 		count++;
 	}

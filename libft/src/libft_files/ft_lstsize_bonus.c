@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:54:24 by vvaalant          #+#    #+#             */
-/*   Updated: 2024/01/24 16:02:55 by vvaalant         ###   ########.fr       */
+/*   Created: 2023/11/19 17:51:08 by vvaalant          #+#    #+#             */
+/*   Updated: 2023/11/19 17:51:09 by vvaalant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../inc/libft.h"
 
-void	sort_three(t_stack_node **a)
+int	ft_lstsize(t_list *lst)
 {
-	t_stack_node	*biggest_node;
+	int		count;
+	t_list	*temp;
 
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a);
-	else if ((*a)->next == biggest_node)
-		rra(a);
-	if ((*a)->content > (*a)->next->content)
-		sa(a);
+	count = 0;
+	temp = lst;
+	while (temp)
+	{
+		temp = temp->next;
+		count++;
+	}
+	return (count);
 }

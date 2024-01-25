@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:54:24 by vvaalant          #+#    #+#             */
-/*   Updated: 2024/01/24 16:02:55 by vvaalant         ###   ########.fr       */
+/*   Created: 2023/10/25 17:29:46 by vvaalant          #+#    #+#             */
+/*   Updated: 2023/10/25 17:29:49 by vvaalant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdlib.h>
 
-void	sort_three(t_stack_node **a)
+void	ft_bzero(void *s, size_t n)
 {
-	t_stack_node	*biggest_node;
+	size_t			i;
+	unsigned char	*value;
 
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a);
-	else if ((*a)->next == biggest_node)
-		rra(a);
-	if ((*a)->content > (*a)->next->content)
-		sa(a);
+	i = 0;
+	value = s;
+	while (n > i)
+	{
+		value[i++] = '\0';
+	}
 }

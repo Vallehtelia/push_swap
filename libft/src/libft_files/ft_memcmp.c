@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:55:32 by vvaalant          #+#    #+#             */
-/*   Updated: 2024/01/24 20:09:08 by vvaalant         ###   ########.fr       */
+/*   Created: 2023/10/31 14:14:08 by vvaalant          #+#    #+#             */
+/*   Updated: 2023/10/31 14:14:21 by vvaalant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdlib.h>
 
-int	main(int argc, char **argv)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	size_t			pos;
+	unsigned char	*s1ptr;
+	unsigned char	*s2ptr;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (0);
-	else if (argc == 2)
-		argv = split(argv[1], ' ');
-	create_list(&a, argv + 1);
-	if (!stack_sorted(a))
+	pos = 0;
+	s1ptr = (unsigned char *)s1;
+	s2ptr = (unsigned char *)s2;
+	while (n > pos)
 	{
-		if (stack_len(a) == 2)
-			sa(&a);
-		else if (stack_len(a) == 3)
-			sort_three(&a);
+		if (s1ptr[pos] != s2ptr[pos])
+		{
+			return (s1ptr[pos] - s2ptr[pos]);
+		}
 		else
-			sort_stacks(&a, &b);
+		{
+			pos++;
+		}
 	}
-	if (argc == 2)
-		free_split(argv);
-	free_list(&a);
 	return (0);
 }

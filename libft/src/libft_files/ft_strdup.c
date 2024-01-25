@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   ft_strdub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:54:24 by vvaalant          #+#    #+#             */
-/*   Updated: 2024/01/24 16:02:55 by vvaalant         ###   ########.fr       */
+/*   Created: 2023/10/31 19:25:02 by vvaalant          #+#    #+#             */
+/*   Updated: 2023/10/31 19:25:10 by vvaalant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdlib.h>
 
-void	sort_three(t_stack_node **a)
+char	*ft_strdup(const char *s1)
 {
-	t_stack_node	*biggest_node;
+	char		*ptr;
+	char		*cpy;
+	int			strlen;
 
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a);
-	else if ((*a)->next == biggest_node)
-		rra(a);
-	if ((*a)->content > (*a)->next->content)
-		sa(a);
+	strlen = 0;
+	while (s1[strlen] != '\0')
+		strlen++;
+	ptr = malloc(strlen + 1);
+	if (ptr == NULL)
+		return (NULL);
+	cpy = ptr;
+	while (*s1)
+	{
+		*cpy = *s1;
+		cpy++;
+		s1++;
+	}
+	*cpy = '\0';
+	return (ptr);
 }

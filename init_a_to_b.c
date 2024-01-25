@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_a_to_b.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/24 15:54:58 by vvaalant          #+#    #+#             */
+/*   Updated: 2024/01/24 15:58:07 by vvaalant         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
@@ -83,7 +94,7 @@ void	set_cheapest(t_stack_node *stack)
 		if (stack->push_cost < cheapest_value)
 		{
 			cheapest_value = stack->push_cost;
-			cheapest_node = stack; 
+			cheapest_node = stack;
 		}
 		stack = stack->next;
 	}

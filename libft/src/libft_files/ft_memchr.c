@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:54:24 by vvaalant          #+#    #+#             */
-/*   Updated: 2024/01/24 16:02:55 by vvaalant         ###   ########.fr       */
+/*   Created: 2023/10/31 13:56:51 by vvaalant          #+#    #+#             */
+/*   Updated: 2023/10/31 13:57:15 by vvaalant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdlib.h>
 
-void	sort_three(t_stack_node **a)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	t_stack_node	*biggest_node;
+	unsigned char	*ptr;
+	size_t			pos;
 
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a);
-	else if ((*a)->next == biggest_node)
-		rra(a);
-	if ((*a)->content > (*a)->next->content)
-		sa(a);
+	ptr = (unsigned char *)s;
+	pos = 0;
+	while (n > pos)
+	{
+		if (ptr[pos] == (unsigned char)c)
+		{
+			return ((void *)&ptr[pos]);
+		}
+		pos++;
+	}
+	return (NULL);
 }

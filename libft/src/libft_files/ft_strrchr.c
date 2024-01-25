@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:54:24 by vvaalant          #+#    #+#             */
-/*   Updated: 2024/01/24 16:02:55 by vvaalant         ###   ########.fr       */
+/*   Created: 2023/10/31 13:24:34 by vvaalant          #+#    #+#             */
+/*   Updated: 2023/10/31 13:24:37 by vvaalant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdlib.h>
 
-void	sort_three(t_stack_node **a)
+char	*ft_strrchr(const char *s, int c)
 {
-	t_stack_node	*biggest_node;
+	char	*ptr;
+	int		strpos;
 
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a);
-	else if ((*a)->next == biggest_node)
-		rra(a);
-	if ((*a)->content > (*a)->next->content)
-		sa(a);
+	ptr = NULL;
+	strpos = 0;
+	while (s[strpos])
+	{
+		if (s[strpos] == (char)c)
+		{
+			ptr = (char *)&s[strpos];
+		}
+		strpos++;
+	}
+	if ((char)c == '\0')
+	{
+		return ((char *)&s[strpos]);
+	}
+	return (ptr);
 }

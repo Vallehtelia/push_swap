@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_creation.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vvaalant <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 16:48:40 by vvaalant          #+#    #+#             */
-/*   Updated: 2024/01/09 16:48:41 by vvaalant         ###   ########.fr       */
+/*   Created: 2024/01/24 15:55:25 by vvaalant          #+#    #+#             */
+/*   Updated: 2024/01/24 16:01:34 by vvaalant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	create_list(t_stack_node **a, char **argv)
 	{
 		if (error_syntax(argv[i]))
 			free_error(a);
-		n =	ft_atol(argv[i]);
+		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			free_error(a);
 		if (error_duplicate(*a, (int)n))

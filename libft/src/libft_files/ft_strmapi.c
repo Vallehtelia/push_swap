@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:54:24 by vvaalant          #+#    #+#             */
-/*   Updated: 2024/01/24 16:02:55 by vvaalant         ###   ########.fr       */
+/*   Created: 2023/11/10 16:53:43 by vvaalant          #+#    #+#             */
+/*   Updated: 2023/11/10 16:53:45 by vvaalant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdlib.h>
 
-void	sort_three(t_stack_node **a)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_stack_node	*biggest_node;
+	int		len;
+	int		count;
+	char	*str;
 
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a);
-	else if ((*a)->next == biggest_node)
-		rra(a);
-	if ((*a)->content > (*a)->next->content)
-		sa(a);
+	if (!s || !f)
+		return (NULL);
+	len = 0;
+	while (s[len])
+	{
+		len++;
+	}
+	str = malloc(len + 1);
+	if (!str)
+		return (NULL);
+	count = 0;
+	while (count < len)
+	{
+		str[count] = f(count, s[count]);
+		count++;
+	}
+	str[len] = '\0';
+	return (str);
 }

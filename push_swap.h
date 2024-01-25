@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/24 15:55:56 by vvaalant          #+#    #+#             */
+/*   Updated: 2024/01/24 16:56:03 by vvaalant         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -5,8 +16,8 @@
 # include <unistd.h>
 # include <stdbool.h>
 # include <limits.h>
-# include "../libft/inc/libft.h"
-# include "../libft/inc/ft_printf.h"
+# include "./libft/inc/libft.h"
+# include "./libft/inc/ft_printf.h"
 
 typedef struct s_stack_node
 {
@@ -54,7 +65,8 @@ void			sort_three(t_stack_node **a);
 void			sort_stacks(t_stack_node **a, t_stack_node **b);
 void			init_nodes_a(t_stack_node *a, t_stack_node *b);
 void			set_cheapest(t_stack_node *stack);
-void			prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name);
+void			prep_for_push(t_stack_node **stack, t_stack_node \
+						*top_node, char stack_name);
 void			init_nodes_b(t_stack_node *a, t_stack_node *b);
 void			min_on_top(t_stack_node **a);
 void			free_error(t_stack_node **stack);
